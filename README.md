@@ -12,7 +12,7 @@
 - [x] Deve ser possível atualizar os dados da conta do cliente
 - [x] Deve ser possível obter os dados da conta do cliente
 - [x] Deve ser possível deletar uma conta
-- [] Deve ser possível retornar o balanço da conta
+- [x] Deve ser possível retornar o balanço da conta
 
 ---
 
@@ -24,3 +24,4 @@
 - [x] Não deve ser possível fazer um saque em uma conta não existente
 - [x] Não deve ser possível fazer saque quando o saldo for insuficiente
 - [x] Não deve ser possível excluir uma conta não existente
+- [x] Não deve ser possível retornar o balanço de uma conta não existente
