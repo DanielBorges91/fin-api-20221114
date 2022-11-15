@@ -33,7 +33,7 @@ function getBalance(statement) {
   return balance;
 }
 
-app.put("/account", (request, response) => {
+app.post("/account", (request, response) => {
   const { name, cpf} = request.body;
 
   const customerAlreadyExists = customers.some( customer => customer.cpf === cpf);
@@ -111,6 +111,15 @@ app.get("/statement/date", verifyIfExistsAccountCPF, (request, response) => {
     );
 
   return response.json(statement);
+});
+
+app.put("/account", verifyIfExistsAccountCPF, (request, response) => {
+  const { customer } = request;
+  const { name } = request.body;
+
+  customer.name = name;
+
+  return response.status(201).json(customer);
 });
 
 app.listen(3333, () => {
