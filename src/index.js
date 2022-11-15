@@ -122,6 +122,11 @@ app.put("/account", verifyIfExistsAccountCPF, (request, response) => {
   return response.status(201).json(customer);
 });
 
+app.get("/account", verifyIfExistsAccountCPF, (request, response) => {
+  const { customer } = request;
+  return response.json(customer);
+});
+
 app.listen(3333, () => {
   console.log("Servidor em execução!");
 });
